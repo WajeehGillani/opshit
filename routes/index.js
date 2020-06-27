@@ -1,10 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
+const HomeController = require('../app/controllers')
+
 // Home page route.
-router.get('/', function (req, res) {
-  res.send('Wiki home page');
-})
+router.get('/', HomeController.home)
 
 // About page route.
 router.get('/about', function (req, res) {
