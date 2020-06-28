@@ -1,5 +1,3 @@
-
-
 const HomeController = {
     home (req, res) {
       	var html = `<!DOCTYPE html>
@@ -12,7 +10,7 @@ const HomeController = {
 						<center>
 							<h1 style="font-family: 'Rajdhani', sans-serif; font-size: 150px;">Opshit</h1>
 							<br>
-							<h1 style="font-family: 'Rajdhani', sans-serif;"">The NodeJS Framework for Smart Back-End</h1>
+							<h1 style="font-family: 'Rajdhani', sans-serif;">The NodeJS Framework for Smart Back-End</h1>
 							<p>It's a open source </p>
 						</center>
 					</body>
