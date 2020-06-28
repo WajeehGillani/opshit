@@ -6,117 +6,160 @@ var home = `<!DOCTYPE html>
 			<style type="text/css">
 				body {
 				  margin: 0;
-				  padding: 0;
-				  font-family: sans-serif;
+				  font-family: 'Rajdhani', sans-serif;
+				  background-color: #f4f4f4;
 				}
 
-				header {
-				  position: absolute;
-				  top: 0;
-				  left: 0;
-				  padding: 0 100px;
-				  background: #262626;
+				a {
+				  color: #000;
+				}
+
+				/* header */
+
+				.header {
+				  background-color: #fff;
+				  box-shadow: 1px 1px 4px 0 rgba(0,0,0,.1);
+				  position: fixed;
 				  width: 100%;
-				  box-sizing: border-box;
+				  z-index: 3;
 				}
 
-				header .logo {
-				  color: #fff;
-				  height: 50px;
-				  line-height: 50px;
-				  font-size: 24px;
-				  font-weight: bold;
-				  text-transform: uppercase;
-				  float: left;
-				}
-
-				header nav {
-				  float: right;
-				}
-
-				header nav ul {
+				.header ul {
 				  margin: 0;
 				  padding: 0;
-				  display: flex;
-				}
-
-				header nav ul li {
 				  list-style: none;
+				  overflow: hidden;
+				  background-color: #fff;
 				}
 
-				header nav ul li a {
-				  height: 50px;
-				  line-height: 50px;
-				  padding: 0 20px;
-				  color: #fff;
-				  text-decoration: none;
+				.header li a {
 				  display: block;
+				  padding: 20px 20px;
+				  border-right: 1px solid #f4f4f4;
+				  text-decoration: none;
 				}
 
-				header nav ul li a.active,
-				header nav ul li a:hover {
-				  color: #fff;
-				  background: #2196f3;
+				.header li a:hover,
+				.header .menu-btn:hover {
+				  background-color: #f4f4f4;
 				}
 
-				.menu-toggle {
-				  color: #fff;
-				  float: right;
-				  line-height: 50px;
-				  font-size: 24px;
+				.header .logo {
+				  display: block;
+				  float: left;
+				  font-size: 2em;
+				  padding: 10px 20px;
+				  text-decoration: none;
+				}
+
+				/* menu */
+
+				.header .menu {
+				  clear: both;
+				  max-height: 0;
+				  transition: max-height .2s ease-out;
+				}
+
+				/* menu icon */
+
+				.header .menu-icon {
 				  cursor: pointer;
+				  display: inline-block;
+				  float: right;
+				  padding: 28px 20px;
+				  position: relative;
+				  user-select: none;
+				}
+
+				.header .menu-icon .navicon {
+				  background: #333;
+				  display: block;
+				  height: 2px;
+				  position: relative;
+				  transition: background .2s ease-out;
+				  width: 18px;
+				}
+
+				.header .menu-icon .navicon:before,
+				.header .menu-icon .navicon:after {
+				  background: #333;
+				  content: '';
+				  display: block;
+				  height: 100%;
+				  position: absolute;
+				  transition: all .2s ease-out;
+				  width: 100%;
+				}
+
+				.header .menu-icon .navicon:before {
+				  top: 5px;
+				}
+
+				.header .menu-icon .navicon:after {
+				  top: -5px;
+				}
+
+				/* menu btn */
+
+				.header .menu-btn {
 				  display: none;
 				}
 
-				@media (max-width: 991px) {
-				  header {
-				    padding: 0 20px;
+				.header .menu-btn:checked ~ .menu {
+				  max-height: 240px;
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon {
+				  background: transparent;
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon:before {
+				  transform: rotate(-45deg);
+				}
+
+				.header .menu-btn:checked ~ .menu-icon .navicon:after {
+				  transform: rotate(45deg);
+				}
+
+				.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:before,
+				.header .menu-btn:checked ~ .menu-icon:not(.steps) .navicon:after {
+				  top: 0;
+				}
+
+				/* 48em = 768px */
+
+				@media (min-width: 48em) {
+				  .header li {
+				    float: left;
 				  }
-				  .menu-toggle {
-				    display: block;
+				  .header li a {
+				    padding: 20px 30px;
 				  }
-				  header nav {
-				    position: absolute;
-				    width: 100%;
-				    height: calc(100vh - 50px);
-				    background: #333;
-				    top: 50px;
-				    left: -100%;
-				    transition: .5s;
-				    text-align: center;
+				  .header .menu {
+				    clear: none;
+				    float: right;
+				    max-height: none;
 				  }
-				  header nav.active {
-				    left: 0;
-				  }
-				  header nav ul {
-				    display: block;
-				  }
-				  header nav ul li a {
-				    border-bottom: 1px solid rgba(0, 0, 0, .2);
+				  .header .menu-icon {
+				    display: none;
 				  }
 				}
 
+
 			</style>
-			<script type="text/javascript">
-				document.querySelector('.menu-toggle').addEventListener('click', function() {
-				  document.querySelector('nav').classList.toggle('active');
-				});
-			</script>
 		</head>
 		<body>
-			<header>
-			  <div class="logo">opshit</div>
-			  <nav class="active">
-			    <ul>
-			      <li><a href="#">Login</a></li>
-			      <li><a href="#">Register</a></li>
-			    </ul>
-			  </nav>
-			  <div class="menu-toggle"><i class="fa fa-bars" aria-hidden="true"></i></div>
+			<header class="header">
+			  <a href="" class="logo">OpShit</a>
+			  <input class="menu-btn" type="checkbox" id="menu-btn" />
+			  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
+			  <ul class="menu">
+			    <li><a href="#work">Login</a></li>
+			    <li><a href="#about">Register</a></li>
+			  </ul>
 			</header>
 			<center>
-				<h1 style="font-family: 'Rajdhani', sans-serif; font-size: 150px;">Opshit</h1>
-				<br>
+				<br><br><br><br><br><br><br><br><br>
 				<h1 style="font-family: 'Rajdhani', sans-serif;">The NodeJS Framework for Smart Back-End</h1>
 				<p>It's a open source </p>
 			</center>

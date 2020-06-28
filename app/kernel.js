@@ -16,6 +16,8 @@ program
 
 program
   .command('serve')
+  .alias('dev')
+  .description('Serve the application')
   .action(() => {
     const app = express();
     app.use(cors());
