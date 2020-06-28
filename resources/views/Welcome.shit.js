@@ -6,8 +6,8 @@ var html = `<!DOCTYPE html>
 		</head>
 		<body>
 			<center>
-				<h1 style="font-family: 'Rajdhani', sans-serif; font-size: 150px;">Opshit</h1>
-				<br>
+				<br><br><br><br><br><br><br><br><br>
+				<img src="https://raw.githubusercontent.com/opshit/opshit/master/public/images/opshit-small.png">
 				<h1 style="font-family: 'Rajdhani', sans-serif;">The NodeJS Framework for Smart Back-End</h1>
 				<p>It's a open source </p>
 			</center>
