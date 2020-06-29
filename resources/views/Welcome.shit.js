@@ -1,5 +1,5 @@
 var html = `<!DOCTYPE html>
-  	<html>
+	<html>
 		<head>
 			<title>OpShit</title>
 			<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@300&display=swap" rel="stylesheet">
@@ -12,6 +12,6 @@ var html = `<!DOCTYPE html>
 				<p>It's a open source </p>
 			</center>
 		</body>
-  	</html>`;
+	</html>`;
 
 exports.html = html;

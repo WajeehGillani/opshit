@@ -150,12 +150,12 @@ var home = `<!DOCTYPE html>
 		</head>
 		<body>
 			<header class="header">
-			  <a href="" class="logo">OpShit</a>
+			  <a href="/" class="logo">OpShit</a>
 			  <input class="menu-btn" type="checkbox" id="menu-btn" />
 			  <label class="menu-icon" for="menu-btn"><span class="navicon"></span></label>
 			  <ul class="menu">
-			    <li><a href="#work">Login</a></li>
-			    <li><a href="#about">Register</a></li>
+			    <li><a href="/login">Login</a></li>
+			    <li><a href="/register">Register</a></li>
 			  </ul>
 			</header>
 			<center>

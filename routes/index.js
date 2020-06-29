@@ -1,12 +1,17 @@
 var express = require('express');
 var router = express.Router();
 
-const HomeController = require('../app/controllers/HomeController')
+const HomeController = require('../app/controllers/HomeController');
 
-	// Home page route.
+//const AuthController = require('../app/controllers/AuthController');
+
+	// Home page route.AuthController
 	router.get('/', HomeController.index);
 
-	// Sample page route.
 	router.get('/home', HomeController.home);
+
+	//route.get('register', AuthController.register);
+
+	//route.get('login', AuthController.login);
 
 module.exports = router;
