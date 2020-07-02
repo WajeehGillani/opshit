@@ -162,7 +162,7 @@ var home = `<!DOCTYPE html>
 				<br><br><br><br><br><br><br><br><br>
 				<img src="https://raw.githubusercontent.com/opshit/opshit/master/public/images/opshit-small.png">
 				<h1 style="font-family: 'Rajdhani', sans-serif;">The NodeJS Framework for Smart Back-End</h1>
-				<p style="font-weight: bold; color: maroon;">It's an open source </p>
+				<p style="font-weight: bold; color: maroon;">opshit an open source </p>
 			</center>
 		</body>
   	</html>`;
