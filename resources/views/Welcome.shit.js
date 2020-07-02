@@ -9,7 +9,7 @@ var html = `<!DOCTYPE html>
 				<br><br><br><br><br><br><br><br><br>
 				<img src="https://raw.githubusercontent.com/opshit/opshit/master/public/images/opshit-small.png">
 				<h1 style="font-family: 'Rajdhani', sans-serif;">The NodeJS Framework for Smart Back-End</h1>
-				<p>It's a open source </p>
+				<p style="font-weight: bold; color: maroon;">OpShit an open source </p>
 			</center>
 		</body>
 	</html>`;
