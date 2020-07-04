@@ -21,7 +21,7 @@ program
     clear();
 
     console.log(
-      chalk.yellow(
+      chalk.green(
         figlet.textSync('opshit', { horizontalLayout: 'full' })
       )
     );
@@ -39,14 +39,6 @@ program
     app.listen(process.env.PORT, () => {
       console.log(chalk.green(`opshit development server started on http://127.0.0.1:${process.env.PORT}`));
     });
-    /*
-    chokidar.watch('.').on('all', (event, path) => {
-      console.log(chalk.blue(event + " " + path));
-    });
-    server.listen(8080, function() {
-      server.close();
-    });
-    */
   });
 
 program
