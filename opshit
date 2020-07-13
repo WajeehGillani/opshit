@@ -1,33 +1,13 @@
 const files = require('./config/files')
 const kernel  = require('./app/kernel');
 
-
 kernel.parse(process.argv);
 
-/*
-
-clear();
-
-console.log(
-  chalk.yellow(
-    figlet.textSync('opshit', { horizontalLayout: 'full' })
-  )
-);
-
-
-if (files.directoryExists('node_modules')) {
-  console.log(chalk.green('Already initialized node_modules!'));
-  process.exit();
-}
-else
-{
-  console.log(chalk.red('Already initialized node_modules!'));
-}*/
-
-
-/*const run = async () => {
-  const credentials = await kernel.askGithubCredentials();
-  console.log(credentials);
-};
-
-run();*/
+/*                      _       _   _   
+   ___    _ __    ___  | |__   (_) | |_ 
+  / _ \  | '_ \  / __| | '_ \  | | | __|
+ | (_) | | |_) | \__ \ | | | | | | | |_ 
+  \___/  | .__/  |___/ |_| |_| |_|  \__|
+         |_|
+ The NodeJS Framework for Smart Back-End
+*/
