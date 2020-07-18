@@ -3,7 +3,7 @@ var router = express.Router();
 
 const HomeController = require('../app/controllers/HomeController');
 
-//const AuthController = require('../app/controllers/AuthController');
+const AuthController = require('../app/controllers/AuthController');
 
 	// Home page route.AuthController
 	router.get('/', HomeController.index);
@@ -12,6 +12,6 @@ const HomeController = require('../app/controllers/HomeController');
 
 	//route.get('register', AuthController.register);
 
-	//route.get('login', AuthController.login);
+	route.get('login', AuthController.login);
 
 module.exports = router;

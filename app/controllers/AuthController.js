@@ -1,9 +1,8 @@
-const login = require('../../resources/views/auth/login.shit')
-const register = require('../../resources/views/auth/register.shit')
+const auth = require('../../resources/views/auth/auth.shit')
 
 const AuthController = { 
 	login (req, res) {
-		// res.send(login)
+		res.send(auth)
 	}
 }; 
 
