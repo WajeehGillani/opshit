@@ -35,6 +35,7 @@ program
     const app = express();
     app.use(cors());
     app.use(express.static(__dirname + '/public'));
+    app.use(express.static('C:\Users\s\Desktop\opshit'));
     //app.use(express.static('/home/myName/allMyMedia/'));
     app.use('/', routes);
 
