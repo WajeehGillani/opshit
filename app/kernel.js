@@ -32,11 +32,11 @@ program
   .alias('dev')
   .description('Serve the application')
   .action(() => {
-    const app = express();
+    let app = express();
+    let public = __dirname.substring(0, __dirname.length-3) + 'public';
     app.use(cors());
-    app.use(express.static(__dirname + '/public'));
-    app.use(express.static('C:\Users\s\Desktop\opshit'));
-    //app.use(express.static('/home/myName/allMyMedia/'));
+    app.use(express.static(public));
+    //console.log(public)
     app.use('/', routes);
 
     app.listen(process.env.PORT, () => {

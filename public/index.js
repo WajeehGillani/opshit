@@ -4,7 +4,10 @@ const routes = require('../routes');
 const env = require('dotenv').config({ path: '../.env' });
 
 const app = express();
+let public = __dirname;
+//console.log(public)
 app.use(cors());
+app.use(express.static(public));
 app.use('/', routes);
 
 app.listen(process.env.PORT, () => {
