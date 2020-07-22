@@ -1,3 +1,6 @@
+const welcome = require('../../views/Welcome.shit')
+const Home = require('../../views/Home.shit')
+
 const HomeController  = {
 
 	index (req, res) {
@@ -5,7 +8,7 @@ const HomeController  = {
 	},
 
 	home (req, res) {
-		res.render("auth/shit")
+		res.send(Home.home)
 	}
 
 };
