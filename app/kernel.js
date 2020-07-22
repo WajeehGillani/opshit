@@ -36,7 +36,7 @@ program
     let public = __dirname.substring(0, __dirname.length-3) + 'public';
     app.use(cors());
     app.use(express.static(public));
-    //console.log(public)
+    app.set("view engine", "ejs");
     app.use('/', routes);
 
     app.listen(process.env.PORT, () => {
