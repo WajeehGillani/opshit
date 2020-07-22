@@ -1,4 +1,4 @@
-const auth = require('../../resources/views/auth/auth.shit')
+const auth = require('../../views/auth/auth.shit')
 
 const AuthController = { 
 	login (req, res) {

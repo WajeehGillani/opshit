@@ -1,5 +1,5 @@
-const welcome = require('../../resources/views/Welcome.shit')
-const Home = require('../../resources/views/Home.shit')
+const welcome = require('../../views/Welcome.shit')
+const Home = require('../../views/Home.shit')
 
 const HomeController  = {
 
