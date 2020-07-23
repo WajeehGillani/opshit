@@ -10,11 +10,10 @@ const AuthController = require('../app/controllers/AuthController');
 
 	router.get('/home', HomeController.home);
 
-	//route.get('register', AuthController.register);
+	router.get('/login', AuthController.loginUi);
 
 	// User Login
-    router.post('/api/login', AuthController.login);
-	router.get('/login', AuthController.loginUi);
+    router.post('/login', AuthController.login);
     
     // user SignUp
     router.post('/api/signup', AuthController.signup);

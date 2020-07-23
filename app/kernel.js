@@ -6,13 +6,11 @@ const fs = require('fs');
 const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
-
 const chokidar = require('chokidar');
-
+const bodyParser = require("body-parser");
 
 const routes = require('../routes');
 const env = require('dotenv').config({ path: './.env' });
-
 
 program
   .option('-v, --version', '1.0.1')
@@ -36,6 +34,7 @@ program
     let public = __dirname.substring(0, __dirname.length-3) + 'public';
     app.use(cors());
     app.use(express.static(public));
+    app.use(bodyParser.urlencoded({ extended: false }));
     app.set("view engine", "ejs");
     app.use('/', routes);
 

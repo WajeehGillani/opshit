@@ -1,4 +1,4 @@
-const models = require('../../models');
+const models = require('../models');
 var bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
 
@@ -27,7 +27,19 @@ const signup = async function (req, res) {
 }
 
 const login = async function (req, res) {
-  let user = await models.User.findOne({ email: req.body.email });
+	const { name, password } = req.body;
+
+	if (name === "admin" && password === "admin") {
+	    /*res.render("success", {
+	      	username: name,
+	    });*/
+	    console.log("success")
+	} else {
+	    res.render("auth/auth", {
+	    	message : "Username or password incorrect"
+	    });
+	}
+  /*let user = await models.User.findOne({ email: req.body.email });
   if (user) {
     bcrypt.compare(req.body.password, user.password, function (err, result) {
       if (err) throw err;
@@ -49,11 +61,13 @@ const login = async function (req, res) {
     res.status(401).json({
       message: "Email Not found"
     })
-  }
+  }*/
 }
 
 const loginUi = (req, res) => {
-		res.render("auth/auth");
+		res.render("auth/auth", {
+	    	message : ""
+	    });
 	
 }; 
 
