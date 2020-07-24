@@ -12,10 +12,12 @@ const AuthController = require('../app/controllers/AuthController');
 
 	router.get('/login', AuthController.loginUi);
 
+	router.get('/register', AuthController.registerUi);
+
 	// User Login
     router.post('/login', AuthController.login);
     
     // user SignUp
-    router.post('/api/signup', AuthController.signup);
+    router.post('/register', AuthController.signup);
     
 module.exports = router;

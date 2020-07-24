@@ -1,8 +1,13 @@
+<%- include('../layout/Header.ejs') %>
 <form id='register-form' action="" method='post'>
-  <input type="text" placeholder="Username" required>
-  <input type="email" placeholder="Email" required>
-  <input type="password" placeholder="Password" required>
-  <input type="password" placeholder="Re Password" required>
-  <button type='submit'>Register</button>
-  <label for='form-switch'>Already Member ? Sign In Now..</label>
+  <div class="box">
+    <center><h2>Register here</h2></center>
+    <input type="text" placeholder="Username" required>
+    <input type="email" placeholder="Email" required>
+    <input type="password" placeholder="Password" required>
+    <input type="password" placeholder="Re Password" required>
+    <button type='submit'>Register</button>
+    <strong style="color: green;"><%=message%></strong>
+  </div>
+  <center><a href="/login"><label for='form-switch'>Already Member ? Sign In Now..</label></a></center>
 </form>
