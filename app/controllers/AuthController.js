@@ -27,6 +27,7 @@ const signup = async function (req, res) {
 }
 
 const login = async function (req, res) {
+	
 	const { name, password } = req.body;
 
 	if (name === "admin" && password === "admin") {
@@ -39,36 +40,35 @@ const login = async function (req, res) {
 	    	message : "Username or password incorrect"
 	    });
 	}
-  /*let user = await models.User.findOne({ email: req.body.email });
-  if (user) {
-    bcrypt.compare(req.body.password, user.password, function (err, result) {
-      if (err) throw err;
-      if (result) {
-        jwt.sign({ id: user._id, type: user.userType }, process.env.JWT_KEY, { expiresIn: "1h" }, function(err, token){
-          if(err) throw err;
-          res.status(200).json({
-            message: "Correct",
-            token: token
-          })
-        })
-      } else {
-        res.status(401).json({
-          message: "Password wrong"
-        })
-      };
-    })
-  } else {
-    res.status(401).json({
-      message: "Email Not found"
-    })
-  }*/
-}
+		  /*let user = await models.User.findOne({ email: req.body.email });
+		if (user) {
+		    bcrypt.compare(req.body.password, user.password, function (err, result) {
+		      if (err) throw err;
+		      if (result) {
+		        jwt.sign({ id: user._id, type: user.userType }, process.env.JWT_KEY, { expiresIn: "1h" }, function(err, token){
+		          if(err) throw err;
+		          res.status(200).json({
+		            message: "Correct",
+		            token: token
+		          })
+		        })
+		      } else {
+		        res.status(401).json({
+		          message: "Password wrong"
+		        })
+		      };
+		    })
+		} else {
+		    res.status(401).json({
+		      message: "Email Not found"
+		    })
+		}*/
+	}
 
-const loginUi = (req, res) => {
+	const loginUi = (req, res) => {
 		res.render("auth/auth", {
 	    	message : ""
 	    });
-	
-}; 
+	}; 
 
 module.exports = { loginUi, login, signup };
