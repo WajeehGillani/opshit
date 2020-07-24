@@ -1,21 +1,24 @@
 const express = require('express');
 const cors = require('cors');
-const mongoose = require('mongoose')
+const bodyParser = require("body-parser");
+const chalk = require('chalk');
+
 const routes = require('../routes');
 const env = require('dotenv').config({ path: '../.env' });
 
-const app = express();
-let public = __dirname;
+let app = express();
+let public = __dirname.substring(0, __dirname.length-3) + 'public';
 
-mongoose.connect(process.env.DATABASE, {useNewUrlParser: true, useUnifiedTopology: true}, () =>{
-    console.log('Connected to MongoDB...');
-});
-
-app.u
 app.use(cors());
 app.use(express.static(public));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.set("view engine", "ejs");
 app.use('/', routes);
 
-app.listen(process.env.PORT, () => {
-    console.log(`opshit development server started on http://127.0.0.1:${process.env.PORT}`);
+app.listen(process.env.PORT, (err) => {
+    if (err) 
+    {
+        console.error('❌ Unable to connect the server: ', err);
+    }
+    console.log(chalk.green(`🌍 opshit development server started on http://127.0.0.1:${process.env.PORT}`));
 });

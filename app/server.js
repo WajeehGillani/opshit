@@ -16,8 +16,11 @@ app.set("view engine", "ejs");
 app.use('/', routes);
 
 app.listen(process.env.PORT, (err) => {
-  if (err) console.error('❌ Unable to connect the server: ', err);
-  console.log(chalk.green(`🌍 opshit development server started on http://127.0.0.1:${process.env.PORT}`));
+    if (err) 
+    {
+        console.error('❌ Unable to connect the server: ', err);
+    }
+    console.log(chalk.green(`🌍 opshit development server started on http://127.0.0.1:${process.env.PORT}`));
 });
 
 module.exports = app;
