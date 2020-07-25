@@ -4,10 +4,6 @@ const HomeController  = {
 		res.render("Welcome");
 	},
 
-	home (req, res) {
-		res.render("Home");
-	}
-
 };
 
 module.exports = HomeController;
