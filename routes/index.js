@@ -8,8 +8,6 @@ const AuthController = require('../app/controllers/AuthController');
 	// Home page route.AuthController
 	router.get('/', HomeController.index);
 
-	router.get('/home', HomeController.home);
-
 	router.get('/login', AuthController.loginUi);
 
 	router.get('/register', AuthController.registerUi);

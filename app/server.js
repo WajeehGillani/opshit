@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.use('/', routes);
 
-app.listen(process.env.PORT, (err) => {
+app.listen(process.env.PORT || 5001, (err) => {
     if (err) 
     {
         console.error('❌ Unable to connect the server: ', err);
