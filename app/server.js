@@ -6,8 +6,6 @@ const chalk = require('chalk');
 const routes = require('../routes');
 const env = require('dotenv').config({ path: './.env' });
 
-    
-
 let app = express();
 let public = __dirname.substring(0, __dirname.length-3) + 'public';
 
@@ -23,7 +21,7 @@ app.listen(process.env.PORT || 5001, (err) => {
 
     if (process.env.DB_TYPE == 'mysql') 
     {
-        console.log("selected DB type: mySql");
+        console.log(chalk.blue('🛢  selected database type : mysql'));
         const mysql = require('../config/mysql')
     }
 });
