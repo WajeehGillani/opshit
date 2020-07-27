@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const chalk = require('chalk');
+const helmet = require('helmet')
 
 const routes = require('../routes');
 const env = require('dotenv').config({ path: './.env' });
@@ -10,6 +11,7 @@ let app = express();
 let public = __dirname.substring(0, __dirname.length-3) + 'public';
 
 app.use(cors());
+app.use(helmet());
 app.use(express.static(public));
 app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
