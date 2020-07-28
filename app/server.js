@@ -26,6 +26,12 @@ app.listen(process.env.PORT || 5001, (err) => {
         console.log(chalk.blue('🛢  selected database type : mysql'));
         const mysql = require('../config/mysql')
     }
+
+    if (process.env.DB_TYPE == 'mongodb') 
+    {
+        console.log(chalk.blue('🛢  selected database type : mongodb'));
+        const mongodb = require('../config/mongodb')
+    }
 });
 
 module.exports = app;
