@@ -19,6 +19,8 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set("view engine", "ejs");
 app.use('/', routes);
 
+app.disable('x-powered-by');
+
 app.listen(process.env.PORT || 5001, (err) => {
     
     console.log(chalk.green(`🌍 opshit development server started on http://127.0.0.1:${process.env.PORT}`));
