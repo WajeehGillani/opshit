@@ -11,7 +11,8 @@
     "type": "git",
     "url": "git+https://github.com/opshit/opshit.git"
   },
-  "keywords": [],
+  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
+  "keywords": ["nodejs", "framework", "smart-api", "back-end"],
   "author": "katheesh",
   "license": "ISC",
   "bugs": {
