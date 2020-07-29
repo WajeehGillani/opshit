@@ -4,6 +4,7 @@ const bodyParser = require("body-parser");
 const chalk   = require('chalk');
 const helmet  = require('helmet')
 const flash   = require('express-flash');
+const moment  = require('moment');
 
 const routes = require('../routes');
 const env = require('dotenv').config({ path: './.env' });
