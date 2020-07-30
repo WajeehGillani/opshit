@@ -20,7 +20,7 @@ app.use(cors());
 
 app.use(helmet());
 
-app.use(flash());
+//app.use(flash());
 
 app.use(express.static(public));
 
