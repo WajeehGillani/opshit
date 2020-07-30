@@ -8,7 +8,7 @@ const moment  = require('moment');
 
 const routes = require('../routes');
 const env = require('dotenv').config({ path: './.env' });
-const {languageHelper}      = require('../helpers/language.js');
+const {languageHelper}      = require('../config/language.js');
 
 let app = express();
 
