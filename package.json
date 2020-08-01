@@ -1,6 +1,6 @@
 {
   "name": "opshit",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "opshit",
   "scripts": {
@@ -10,9 +10,6 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/opshit/opshit.git"
-  },
-  "publishConfig": {
-    "registry": "https://npm.pkg.github.com/"
   },
   "keywords": [
     "nodejs",
