@@ -7,9 +7,6 @@ const chalk = require('chalk');
 const clear = require('clear');
 const figlet = require('figlet');
 
-const server = require('./server');
-const routes = require('../routes');
-const env = require('dotenv').config({ path: './.env' });
 
 program
   .option('-v, --version', '1.0.1')
@@ -29,7 +26,7 @@ program
   .alias('dev')
   .description('Serve the application')
   .action(() => {
-    server
+    const server = require('./server');
   });
 
 program
