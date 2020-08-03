@@ -1,3 +1,4 @@
+const service = require('../../config/services');
 const models = require('../models');
 var bcrypt = require('bcryptjs');
 const jwt = require('jsonwebtoken');
@@ -39,20 +40,20 @@ const jwt = require('jsonwebtoken');
 	}
 
 const login = async function (req, res) {
-	
+
+
 	const { name, password } = req.body;
 
-	if (name === "admin" && password === "admin") {
-	    /*res.render("success", {
-	      	username: name,
-	    });*/
-	    console.log("success")
-	} else {
-	    res.render("auth/login", {
-	    	message : "Username or password incorrect"
-	    });
+	if (process.env.DB_TYPE == 'null'){
+        console.log('🛢  Please select one database type on .env file.');
 	}
-		  /*let user = await models.User.findOne({ email: req.body.email });
+	if (process.env.DB_TYPE == 'mysql'){
+        console.log('🛢  selected database type : mysql');
+	}
+	if (process.env.DB_TYPE == 'mongodb'){
+        console.log('🛢  selected database type : mysql');
+        
+        let user = await models.User.findOne({ email: req.body.email });
 		if (user) {
 		    bcrypt.compare(req.body.password, user.password, function (err, result) {
 		      if (err) throw err;
@@ -74,8 +75,20 @@ const login = async function (req, res) {
 		    res.status(401).json({
 		      message: "Email Not found"
 		    })
-		}*/
+		}
 	}
+	if (name === "admin" && password === "admin") {
+	    /*res.render("success", {
+	      	username: name,
+	    });*/
+	    console.log("success")
+	} else {
+	    res.render("auth/login", {
+	    	message : "Username or password incorrect"
+	    });
+	}
+		
+}
 
 
 
