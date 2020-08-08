@@ -31,14 +31,28 @@ program
 
 program
   .command('make:ctrl <ctrlname>') // No need of specifying arguments here
-  .alias('make:controller')
+  .alias('create:controller')
   .description('create a controller')
   .action((ctrlname) => {
     fs.writeFile('app/controllers/'+ctrlname +'Controller.js', 'const '
       +ctrlname+'Controller = { \n\n}; \n\nmodule.exports = '+ctrlname+'Controller;', 
       function (err) {
         if (err) throw err;
-        console.log(ctrlname+'Controller is created successfully.');
+        console.log(ctrlname+'Controller created successfully.');
+        process.exit(1);
+      });
+  });
+
+program
+  .command('make:model <modelname>')
+  .alias('create:model')
+  .description('create a model')
+  .action((modelname) => {
+    fs.writeFile('app/models/'+modelname +'.js', 'const '
+      +modelname+' = { \n\n}; \n\nmodule.exports = '+modelname, 
+      function (err) {
+        if (err) throw err;
+        console.log(modelname+'Model created successfully.');
         process.exit(1);
       });
   });
