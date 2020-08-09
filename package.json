@@ -2,9 +2,9 @@
   "name": "opshit",
   "version": "1.0.3",
   "description": "",
-  "main": "opshit",
+  "main": "public/index.js",
   "scripts": {
-    "start": "babel-node public/index.js --presets es2015",
+    "start": "opshit serve",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
