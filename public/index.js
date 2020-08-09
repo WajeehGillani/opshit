@@ -1,4 +1,6 @@
-const express = require('express');
+let serve = require('../app/server.js');
+
+/*const express = require('express');
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const chalk = require('chalk');
@@ -21,4 +23,4 @@ app.listen(process.env.PORT, (err) => {
         console.error('❌ Unable to connect the server: ', err);
     }
     console.log(chalk.green(`🌍 opshit development server started on http://127.0.0.1:${process.env.PORT}`));
-});
+});*/
