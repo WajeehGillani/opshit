@@ -2,10 +2,13 @@
   "name": "opshit",
   "version": "1.0.3",
   "description": "",
-  "main": "opshit",
+  "main": "public/index.js",
   "scripts": {
-    "start": "babel-node public/index.js --presets es2015",
+    "start": "node public/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "engines": {
+    "node": "10.x"
   },
   "repository": {
     "type": "git",
