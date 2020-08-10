@@ -1,7 +1,7 @@
 {
   "name": "opshit",
-  "version": "1.0.3",
-  "description": "",
+  "version": "1.0.4",
+  "description": "The NodeJS Framework for Smart Back-End",
   "main": "public/index.js",
   "scripts": {
     "start": "node public/index.js",
