@@ -5,7 +5,7 @@
   "main": "public/index.js",
   "scripts": {
     "start": "node public/index.js",
-    "test": "grunt nodeunit"
+    "test": "npm test"
   },
   "engines": {
     "node": "10.x"
