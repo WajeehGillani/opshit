@@ -16,31 +16,43 @@ const jwt = require('jsonwebtoken');
 	    });
 	};
 
-	const signup = async function (req, res) {
-	  	req.body.userType = "USER";
-	  	bcrypt.genSalt(10, function (err, salt) {
-	    if (err) throw err;
-	    	bcrypt.hash(req.body.password, salt, async function (err, hash) {
-	      	if (err) throw err;
-	      		req.body.password = hash;
-	      		let user = new models.User(req.body);
-	      		try {
-	        		await user.save();
-	        		res.json({
-	          			message: "User Created"
-	        		})
-	      		} catch (error) {
-	        		console.log(error)
-			        res.status(500).json({
-			          message: "User not created"
-			        })
-	      		}
+const signup = async function (req, res) {
+	
+	if (process.env.DB_TYPE == 'null'){
+        	console.log('🛢  Please select a database type on .env file.');
+		res.render("auth/register", {
+	    		message : "🛢  Please select a database type on .env file."
 	    	});
-	  	});
 	}
+	if (process.env.DB_TYPE == 'mysql'){
+        	console.log('🛢  selected database type : mysql');
+	}
+	if (process.env.DB_TYPE == 'mongodb'){
+        	console.log('🛢  selected database type : mongodb');
+	/*  	req.body.userType = "USER";
+	  	bcrypt.genSalt(10, function (err, salt) {
+		   if (err) throw err;
+			bcrypt.hash(req.body.password, salt, async function (err, hash) {
+			if (err) throw err;
+				req.body.password = hash;
+				let user = new models.User(req.body);
+				try {
+					await user.save();
+					res.json({
+						message: "User Created"
+					})
+				} catch (error) {
+					console.log(error)
+					res.status(500).json({
+					  message: "User not created"
+					})
+				}
+			});
+		  });   */
+	}
+}
 
 const login = async function (req, res) {
-
 
 	const { name, password } = req.body;
 
